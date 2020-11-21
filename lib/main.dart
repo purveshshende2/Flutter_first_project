@@ -37,11 +37,21 @@ class _MyAppHomePage extends State<HomePage> {
       padding: const EdgeInsets.all(8.0),
       child: new Center(
         child: new Column(
+          mainAxisAlignment: MainAxisAlignment.center,
           children: <Widget>[
-            new Text(mytext),
+            new Text(
+              mytext,
+              style: new TextStyle(fontSize: 22.2),
+            ),
             new RaisedButton(
-              child: new Text("Click"),
+              child: new Text(
+                "Click",
+                style: new TextStyle(
+                  color: Colors.white,
+                ),
+              ),
               onPressed: _changeText,
+              color: Colors.yellow,
             )
           ],
         ),

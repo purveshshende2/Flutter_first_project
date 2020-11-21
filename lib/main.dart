@@ -12,7 +12,7 @@ class MyApp extends StatelessWidget {
       home: new HomePage(),
       theme: new ThemeData(
           primarySwatch: Colors.green,
-          brightness: Brightness.light, //Brightness.dark
+          brightness: Brightness.dark, //Brightness.dark
           accentColor: Colors.red),
     );
   }
@@ -47,16 +47,6 @@ class _MyAppHomePage extends State<HomePage> {
               mytext,
               style: new TextStyle(fontSize: 22.2),
             ),
-            new RaisedButton(
-              child: new Text(
-                "Click",
-                style: new TextStyle(
-                  color: Colors.white,
-                ),
-              ),
-              onPressed: _changeText,
-              color: Colors.yellow,
-            )
           ],
         ),
       ),
@@ -66,9 +56,14 @@ class _MyAppHomePage extends State<HomePage> {
   @override
   Widget build(BuildContext context) {
     return new Scaffold(
-        appBar: new AppBar(
-          title: new Text("Home Page"),
-        ),
-        body: _bodyWidget());
+      appBar: new AppBar(
+        title: new Text("Home Page"),
+      ),
+      body: _bodyWidget(),
+      floatingActionButton: new FloatingActionButton(
+        child: new Icon(Icons.add),
+        onPressed: _changeText,
+      ),
+    );
   }
 }
